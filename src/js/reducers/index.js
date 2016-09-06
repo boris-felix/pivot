@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import savings from './savings';
 
 const Reducers = combineReducers({
-	toto: (state = {}, action) => state
+	savings
 });
 
 export default Reducers;

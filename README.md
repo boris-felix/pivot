@@ -67,6 +67,7 @@ docker-compose up -d nginx
 
 ## QUESTIONS :
 
-- What event is triggering the loading of the datas ?
-- On appendix 1, the phone screen is more looking like an account page than a responsive view of the accounts list page. Do a click on any account item lead to this page ?
+- What event is triggering the loading of the datas ? Then when this event is triggered, should we update the page constantly or should it be updated only when the user refresh the page ?
+- For every items in the list, what information should also be a link ? What should be the identifier for each item ? We may need an ID for each of them.
+- On appendix 1, the phone screen is more looking like an account page than a responsive view of the accounts list page. Do a click on any account item lead to this page ? If not, do the phone screenshot is reflecting the selected item ?
 

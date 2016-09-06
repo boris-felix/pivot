@@ -6,4 +6,11 @@
 	@include transition-property(opacity);
 	@include transition-duration(0.5s);
 	@include transition-timing-function(ease-in);
+
+	h1 {
+		background-color: $primary-color;
+		color: #FFFFFF;
+		margin: 0px;
+		padding: 20px 10px;
+	}
 }

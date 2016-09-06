@@ -1,0 +1,23 @@
+.saving {
+	cursor: pointer;
+
+	> td {
+		border: none !important;
+
+		a {
+			color: $link-color;
+		}
+	}
+
+	&.selected {
+		background-color: $light-color;
+	}
+
+	&:hover {
+		background-color: $primary-color;
+
+		> td {
+			color: #FFFFFF;
+		}
+	}
+}
