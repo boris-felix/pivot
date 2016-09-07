@@ -1,9 +1,10 @@
 import React from 'react';
 import { expect } from 'chai';
-import GridStateReducer from '../savings';
+import GridStateReducer from '../gridstate';
 import SavingsReducer from '../savings';
 import {
-	SAVING_SELECTED
+	SAVING_SELECTED,
+	UPDATE_DATAS
 } from '../../constants/actionTypes';
 
 describe('Gridstate reducer', () => {
@@ -38,5 +39,27 @@ describe('Gridstate reducer', () => {
 			next: 2,
 			previous: 0
 		});
+	});
+});
+
+describe('Savings reducers', () => {
+	it('should return an array of values', () => {
+		expect(SavingsReducer(undefined, {
+			type: UPDATE_DATAS,
+			values: undefined 
+		})).to.eql([]);
+
+		expect(SavingsReducer(undefined, {
+			type: UPDATE_DATAS,
+			values: [
+				{
+					foo: 'bar'
+				}
+			]
+		})).to.eql([
+			{
+				foo: 'bar'
+			}
+		]);
 	});
 });
