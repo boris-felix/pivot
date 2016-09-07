@@ -31,10 +31,12 @@ class Saving extends Component {
 		const cssLinkClass = [
 			'saving--name col-md-4 col-sd-12 col-xs-12'
 		].join(' ');
+		const previousSign = isPrevious ? (<span>&lt;&nbsp;</span>) : '';
+		const nextSign = isNext ? (<span>&nbsp;&gt;</span>) : '';
 
 		return (
 			<tr className={itemCssClass} onClick={this.selectSaving.bind(this, dispatch, index)}>
-				<td onClick={this.selectSaving.bind(this, dispatch, index)} className={cssLinkClass}>{name}</td>
+				<td onClick={this.selectSaving.bind(this, dispatch, index)} className={cssLinkClass}>{previousSign}{name}{nextSign}</td>
 				<td className={columnCssClass}>{interest_rate}%</td>
 				<td className={columnCssClass}>£{minimum_deposit}</td>
 				<td className={columnCssClass}>{interest_type}</td>

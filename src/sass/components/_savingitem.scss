@@ -3,9 +3,16 @@
 
 	> td {
 		border: none !important;
+		font-size: 20px;
+		color: #0c332f;
+
+		@media screen and (max-width: 767px) {
+			font-size: 24px;
+		}
 
 		a {
 			color: $link-color;
+			font-weight: bold;
 		}
 	}
 
@@ -63,7 +70,7 @@
 			bottom: 20px;
 
 			&:hover {
-				background-color: transparent;
+				background-color: transparent !important;
 
 				> td {
 					color: $link-color;
