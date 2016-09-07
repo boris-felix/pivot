@@ -28,9 +28,7 @@ class Saving extends Component {
 			isNext ? 'next' : ''
 		].join(' ');
 		const columnCssClass = selected ? 'col-md-4 col-sd-12 col-xs-12' : 'col-md-4 hidden-sd hidden-xs';
-		const cssLinkClass = [
-			'saving--name col-md-4 col-sd-12 col-xs-12'
-		].join(' ');
+		const cssLinkClass = 'saving--name col-md-4 col-sd-12 col-xs-12';
 		const previousSign = isPrevious ? (<span className="direction--sign">&lt;&nbsp;</span>) : '';
 		const nextSign = isNext ? (<span className="direction--sign">&nbsp;&gt;</span>) : '';
 
@@ -39,9 +37,9 @@ class Saving extends Component {
 				<td onClick={this.selectSaving.bind(this, dispatch, index)} className={cssLinkClass}>
 					{previousSign}{name}{nextSign}
 				</td>
-				<td className={columnCssClass}>{interest_rate}%</td>
-				<td className={columnCssClass}>£{minimum_deposit}</td>
-				<td className={columnCssClass}>{interest_type}</td>
+				<td className={`interest_rate ${columnCssClass}`}>{interest_rate}%</td>
+				<td className={`minimum_deposit ${columnCssClass}`}>£{minimum_deposit}</td>
+				<td className={`interest_type ${columnCssClass}`}>{interest_type}</td>
 			</tr>
 		);
 	}
