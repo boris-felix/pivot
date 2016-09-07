@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
 	const { type, value } = action;
 	const current = parseInt(value, 10);
 
-	if (type == AT.SAVING_SELECTED) {
+	if (type == AT.SAVING_SELECTED && typeof value == 'number') {
 		return {
 			selected: current,
 			previous: current - 1 > 0 ? current - 1 : 0,

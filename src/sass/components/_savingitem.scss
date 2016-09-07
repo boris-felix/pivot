@@ -20,4 +20,72 @@
 			color: #FFFFFF;
 		}
 	}
+
+	@media screen and (max-width: 767px) {
+		& {
+			display: none;
+		}
+
+		&.selected {
+			display: block  !important;
+			margin: 20px;
+			padding: 10px;
+
+			.saving--name {
+				font-size: 30px;
+			}
+
+			> td {
+				display: block !important;
+				text-align: center;
+				padding: 10px;
+			}
+		}
+
+		&.selected,
+		&:hover {
+			background-color: $background-color !important;
+
+			> td {
+				color: #000000;
+			}
+		}
+
+		&.selected,
+		&.previous,
+		&.next {
+			display: table-row;
+		}
+
+		&.previous,
+		&.next {
+			position: absolute;
+			bottom: 20px;
+
+			&:hover {
+				background-color: transparent;
+
+				> td {
+					color: $link-color;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&.previous {
+			left: 25px;
+
+			.saving--name {
+				float: left;
+			}
+		}
+
+		&.next {
+			right: 25px;
+			
+			.saving--name {
+				float: right;
+			}
+		}
+	}
 }

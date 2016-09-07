@@ -38,7 +38,7 @@ class Layout extends Component {
 				<h1>Saving accounts</h1>
 				<table className="table">
 					<thead>
-						<tr className="grid--header">
+						<tr className="grid--header hidden-sd hidden-xs">
 							<th className="col-md-4">Product</th>
 							<th className="col-md-4">Interest rate</th>
 							<th className="col-md-4">Minimum deposit</th>
@@ -48,7 +48,7 @@ class Layout extends Component {
 					<tbody>
 						{Data.map((data, id) => {
 							const selected = isSelected == id;
-							const isPrevious = previous == id;
+							const isPrevious = previous == id && isSelected !== id;
 							const isNext = next == id;
 
 							return (
