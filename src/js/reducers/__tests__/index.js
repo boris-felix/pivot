@@ -1,13 +1,14 @@
 import React from 'react';
 import { expect } from 'chai';
+import GridStateReducer from '../savings';
 import SavingsReducer from '../savings';
 import {
 	SAVING_SELECTED
 } from '../../constants/actionTypes';
 
-describe('Saving reducer', () => {
+describe('Gridstate reducer', () => {
 	it('should return the first element of the as current by default', () => {
-		expect(SavingsReducer(undefined, {
+		expect(GridStateReducer(undefined, {
 			type: SAVING_SELECTED,
 			value: undefined 
 		})).to.eql({
@@ -18,7 +19,7 @@ describe('Saving reducer', () => {
 	});
 
 	it('should increase the next and the previous value if current is rising', () => {
-		expect(SavingsReducer(undefined, {
+		expect(GridStateReducer(undefined, {
 			type: SAVING_SELECTED,
 			value: 2
 		})).to.eql({
@@ -29,7 +30,7 @@ describe('Saving reducer', () => {
 	});
 
 	it('should decrease the next and the previous value if current is decreasing', () => {
-		expect(SavingsReducer(undefined, {
+		expect(GridStateReducer(undefined, {
 			type: SAVING_SELECTED,
 			value: 1
 		})).to.eql({

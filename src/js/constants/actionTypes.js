@@ -1,1 +1,2 @@
 export const SAVING_SELECTED = 'SAVING_SELECTED';
+export const UPDATE_DATAS = 'UPDATE_DATAS';

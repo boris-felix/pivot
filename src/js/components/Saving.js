@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import * as Actions from '../actionCreators';
+import * as Actions from '../actionsCreator';
 
 const { string, number } = PropTypes;
 
@@ -31,12 +31,14 @@ class Saving extends Component {
 		const cssLinkClass = [
 			'saving--name col-md-4 col-sd-12 col-xs-12'
 		].join(' ');
-		const previousSign = isPrevious ? (<span>&lt;&nbsp;</span>) : '';
-		const nextSign = isNext ? (<span>&nbsp;&gt;</span>) : '';
+		const previousSign = isPrevious ? (<span className="direction--sign">&lt;&nbsp;</span>) : '';
+		const nextSign = isNext ? (<span className="direction--sign">&nbsp;&gt;</span>) : '';
 
 		return (
 			<tr className={itemCssClass} onClick={this.selectSaving.bind(this, dispatch, index)}>
-				<td onClick={this.selectSaving.bind(this, dispatch, index)} className={cssLinkClass}>{previousSign}{name}{nextSign}</td>
+				<td onClick={this.selectSaving.bind(this, dispatch, index)} className={cssLinkClass}>
+					{previousSign}{name}{nextSign}
+				</td>
 				<td className={columnCssClass}>{interest_rate}%</td>
 				<td className={columnCssClass}>£{minimum_deposit}</td>
 				<td className={columnCssClass}>{interest_type}</td>
@@ -50,6 +52,6 @@ Saving.PropTypes = {
 	interest_type: string.isRequired,
 	interest_rate: string.isRequired,
 	minimum_deposit: number.isRequired
-}
+}.isRequired
 
 export default Saving;

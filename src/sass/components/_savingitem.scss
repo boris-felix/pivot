@@ -14,6 +14,10 @@
 			color: $link-color;
 			font-weight: bold;
 		}
+
+		.direction--sign {
+			display: none;
+		}
 	}
 
 	&.selected {
@@ -31,6 +35,12 @@
 	@media screen and (max-width: 767px) {
 		& {
 			display: none;
+
+			> td {
+				.direction--sign {
+					display: inline;
+				}
+			}
 		}
 
 		&.selected {

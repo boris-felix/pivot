@@ -1,20 +1,11 @@
 import * as AT from '../constants/actionTypes';
-const initialState = {
-	selected: 0,
-	next: 1,
-	previous: 0
-};
+const initialState = [];
 
 export default (state = initialState, action) => {
-	const { type, value } = action;
-	const current = parseInt(value, 10);
+	const { type, values } = action;
 
-	if (type == AT.SAVING_SELECTED && typeof value == 'number') {
-		return {
-			selected: current,
-			previous: current - 1 > 0 ? current - 1 : 0,
-			next: current + 1
-		}
+	if (type == AT.UPDATE_DATAS) {
+		return values;
 	}
 
 	return state;
